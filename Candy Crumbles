@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CraveSafe Candy Crumbles | Indulge Freely</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="CraveSafe Candy Crumbles are protein-packed, allergen-free candy toppings that let you indulge freely on yogurt, oatmeal, ice cream and more."
+  />
+
+  <style>
+    :root {
+      --pink: #f50f95;
+      --teal: #00b2ba;
+      --yellow: #feb900;
+      --offwhite: #fffffe;
+      --navy: #02213a; /* soft dark for text */
+      --bg: #050816;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.18);
+      --radius-xl: 1.5rem;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #0f172a 0, #020617 55%, #000 100%);
+      color: var(--offwhite);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Layout */
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.25rem 1.25rem 3.5rem;
+    }
+
+    /* Header & Nav */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(
+        to bottom,
+        rgba(3, 7, 18, 0.92),
+        rgba(3, 7, 18, 0.7) 55%,
+        transparent
+      );
+    }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo-mark {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      background: conic-gradient(
+        from 210deg,
+        var(--pink),
+        var(--yellow),
+        var(--teal),
+        var(--pink)
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo-icon::after {
+      content: "";
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.7);
+    }
+
+    .logo-text-main {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+    }
+
+    .logo-text-sub {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      opacity: 0.8;
+      letter-spacing: 0.18em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      opacity: 0.8;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+
+    .nav-cta {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--pink), var(--yellow));
+      color: #020617;
+      font-weight: 600;
+      font-size: 0.85rem;
+      box-shadow: var(--shadow-soft);
+      border: none;
+      cursor: pointer;
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 45px rgba(0, 0, 0, 0.25);
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.85);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .nav-toggle-line {
+      width: 16px;
+      height: 2px;
+      border-radius: 999px;
+      background: rgba(226, 232, 240, 0.9);
+      position: relative;
+    }
+
+    .nav-toggle-line::before,
+    .nav-toggle-line::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 16px;
+      height: 2px;
+      border-radius: 999px;
+      background: rgba(226, 232, 240, 0.9);
+    }
+
+    .nav-toggle-line::before {
+      top: -5px;
+    }
+
+    .nav-toggle-line::after {
+      top: 5px;
+    }
+
+    /* Hero */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+      padding-top: 2.25rem;
+    }
+
+    .hero-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(148, 163, 184, 0.9);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 4vw, 3rem);
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-title span.accent {
+      background: linear-gradient(135deg, var(--pink), var(--yellow));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: rgba(203, 213, 225, 0.92);
+      max-width: 32rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .pill {
+      font-size: 0.77rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: rgba(226, 232, 240, 0.95);
+      background: radial-gradient(circle at 0 0, rgba(248, 250, 252, 0.12), transparent);
+    }
+
+    .pill--highlight {
+      border: none;
+      background: linear-gradient(135deg, var(--pink), var(--teal));
+      color: #020617;
+      font-weight: 600;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.7rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      border: none;
+      padding: 0.75rem 1.45rem;
+      font-weight: 600;
+      font-size: 0.92rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease,
+        border-color 0.12s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--pink), var(--yellow));
+      color: #020617;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 45px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: rgba(226, 232, 240, 0.95);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 1);
+      border-color: rgba(248, 250, 252, 0.9);
+      transform: translateY(-1px);
+    }
+
+    .hero-footnote {
+      font-size: 0.75rem;
+      color: rgba(148, 163, 184, 0.95);
+      max-width: 26rem;
+    }
+
+    .hero-visual {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero-card {
+      border-radius: var(--radius-xl);
+      padding: 1.4rem 1.4rem 1.1rem;
+      background: radial-gradient(circle at top left, rgba(244, 114, 182, 0.18), transparent),
+        radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.22), rgba(15, 23, 42, 0.98));
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-yogurt-bowl {
+      aspect-ratio: 4 / 3;
+      border-radius: 1.25rem;
+      background:
+        radial-gradient(circle at 10% 0, rgba(255, 255, 255, 0.2), transparent 60%),
+        linear-gradient(145deg, #0f172a, #020617);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 0.75rem;
+      padding: 0.9rem;
+      position: relative;
+    }
+
+    .bowl-main {
+      border-radius: 1.1rem;
+      background: radial-gradient(circle at top, #fefce8 0, #e5e7eb 35%, #cbd5f5 65%, #0f172a 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bowl-top {
+      width: 140%;
+      height: 140%;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 10%, #f97316 0, #fb7185 26%, transparent 60%),
+        radial-gradient(circle at 70% 20%, #22c55e 0, #14b8a6 28%, transparent 62%),
+        radial-gradient(circle at 45% 60%, #22d3ee 0, #6366f1 30%, transparent 65%),
+        radial-gradient(circle at 20% 70%, #eab308 0, #facc15 26%, transparent 62%),
+        radial-gradient(circle at 80% 75%, #f97316 0, #fbbf24 26%, transparent 60%),
+        repeating-radial-gradient(circle at 50% 40%, #fef9c3 0, #fef9c3 3px, #f9a8d4 3px, #f9a8d4 4px);
+      transform: translateY(10%);
+    }
+
+    .crumbs-trail {
+      position: absolute;
+      inset: 10% 5% auto auto;
+      height: 48%;
+      background: conic-gradient(
+        from 200deg,
+        rgba(244, 114, 182, 0.1),
+        rgba(52, 211, 153, 0.35),
+        rgba(129, 140, 248, 0.25),
+        rgba(248, 250, 252, 0.4),
+        rgba(244, 114, 182, 0.08)
+      );
+      filter: blur(10px);
+      opacity: 0.9;
+    }
+
+    .crumb-badge {
+      position: absolute;
+      top: 10%;
+      left: 8%;
+      padding: 0.35rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.88);
+      border: 1px solid rgba(248, 250, 252, 0.7);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .crumb-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--pink), var(--teal));
+    }
+
+    .hero-nutrition-card {
+      border-radius: 1rem;
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      padding: 0.8rem 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+    }
+
+    .hero-nutrition-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .hero-nutrition-title {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(148, 163, 184, 0.98);
+    }
+
+    .hero-nutrition-tag {
+      font-size: 0.7rem;
+      padding: 0.18rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.12);
+      color: #4ade80;
+      border: 1px solid rgba(74, 222, 128, 0.5);
+    }
+
+    .hero-macros {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.4rem;
+    }
+
+    .macro-chip {
+      border-radius: 0.9rem;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      padding: 0.4rem 0.55rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .macro-label {
+      font-size: 0.66rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: rgba(148, 163, 184, 0.98);
+    }
+
+    .macro-value {
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .macro-value span {
+      font-size: 0.7rem;
+      font-weight: 500;
+      opacity: 0.8;
+      margin-left: 0.15rem;
+    }
+
+    .hero-flavors-row {
+      margin-top: 0.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      font-size: 0.7rem;
+      color: rgba(148, 163, 184, 0.9);
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      margin-right: 0.2rem;
+      background: linear-gradient(135deg, var(--pink), var(--yellow));
+      display: inline-block;
+    }
+
+    /* Sections */
+
+    .section {
+      margin-top: 3.25rem;
+    }
+
+    .section-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(148, 163, 184, 0.98);
+      margin-bottom: 0.3rem;
+    }
+
+    .section-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      max-width: 26rem;
+      color: rgba(148, 163, 184, 0.98);
+    }
+
+    /* Benefits */
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .benefit-card {
+      border-radius: var(--radius-xl);
+      background: radial-gradient(circle at 0 0, rgba(248, 250, 252, 0.05), transparent),
+        rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      padding: 1rem;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .benefit-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(148, 163, 184, 0.98);
+    }
+
+    .benefit-title {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .benefit-body {
+      font-size: 0.86rem;
+      color: rgba(203, 213, 225, 0.96);
+    }
+
+    .benefit-tag {
+      margin-top: 0.3rem;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      color: rgba(226, 232, 240, 0.98);
+      align-self: flex-start;
+    }
+
+    /* How It Works */
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1.6rem;
+      align-items: flex-start;
+    }
+
+    .how-steps {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 0.65rem;
+      align-items: flex-start;
+    }
+
+    .step-number {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, var(--yellow), var(--pink));
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #020617;
+      font-size: 0.76rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .step-title {
+      font-weight: 600;
+      font-size: 0.96rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .step-body {
+      font-size: 0.86rem;
+      color: rgba(203, 213, 225, 0.96);
+    }
+
+    .how-card {
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      padding: 1rem;
+      background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.22), transparent),
+        rgba(15, 23, 42, 0.96);
+      box-shadow: var(--shadow-soft);
+      font-size: 0.85rem;
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .how-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .how-chip {
+      font-size: 0.76rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(226, 232, 240, 0.95);
+    }
+
+    .how-list {
+      display: grid;
+      gap: 0.3rem;
+      color: rgba(209, 213, 219, 0.98);
+    }
+
+    /* Find Us */
+
+    .find-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 1.4rem;
+      align-items: center;
+    }
+
+    .find-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.7rem;
+    }
+
+    .find-badge {
+      font-size: 0.74rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: rgba(226, 232, 240, 0.96);
+    }
+
+    .email-card {
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 1rem;
+      background: rgba(15, 23, 42, 0.98);
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      gap: 0.75rem;
+      font-size: 0.86rem;
+    }
+
+    .email-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .email-input {
+      flex: 1;
+      min-width: 0;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      padding: 0.65rem 0.9rem;
+      font-size: 0.9rem;
+      background: rgba(15, 23, 42, 0.96);
+      color: var(--offwhite);
+      outline: none;
+    }
+
+    .email-input::placeholder {
+      color: rgba(148, 163, 184, 0.9);
+    }
+
+    /* Footer */
+
+    .footer {
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      margin-top: 3rem;
+      padding-top: 1.4rem;
+      font-size: 0.8rem;
+      color: rgba(148, 163, 184, 0.96);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    .footer-links a {
+      opacity: 0.9;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 880px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .benefits-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .how-grid,
+      .find-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav-links {
+        position: fixed;
+        inset: 52px 1rem auto 1rem;
+        border-radius: 1.2rem;
+        padding: 0.8rem 1rem 0.9rem;
+        background: rgba(15, 23, 42, 0.98);
+        border: 1px solid rgba(51, 65, 85, 0.9);
+        flex-direction: column;
+        transform-origin: top;
+        transform: scaleY(0.6);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.14s ease, transform 0.16s ease;
+      }
+
+      .nav-links.is-open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: scaleY(1);
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+      }
+
+      .page {
+        padding-inline: 1rem;
+      }
+
+      .benefits-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card {
+        margin-inline: auto;
+        max-width: 360px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a href="#top" class="logo-mark">
+        <div class="logo-icon"></div>
+        <div>
+          <div class="logo-text-main">CraveSafe</div>
+          <div class="logo-text-sub">Candy Crumbles</div>
+        </div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <div class="nav-toggle-line"></div>
+      </button>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#benefits">Benefits</a>
+        <a href="#how">How to enjoy</a>
+        <a href="#find">Find CraveSafe</a>
+        <a href="#stay-updated">Stay updated</a>
+        <button class="nav-cta" onclick="document.getElementById('stay-updated').scrollIntoView({behavior: 'smooth'})">
+          Try CraveSafe
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="page">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div>
+        <p class="hero-kicker">ALLERGEN-FREE • PROTEIN-PACKED • FUN</p>
+        <h1 id="hero-heading" class="hero-title">
+          Candy you can <span class="accent">indulge in safely.</span>
+        </h1>
+        <p class="hero-subtitle">
+          CraveSafe Candy Crumbles turn yogurt, oatmeal, ice cream, pancakes and more into better-for-you desserts —
+          with candy-level flavor and none of the top allergens.
+        </p>
+
+        <div class="hero-pills">
+          <span class="pill pill--highlight">Allergen-free formula</span>
+          <span class="pill">Protein-packed bites</span>
+          <span class="pill">Better-for-you candy</span>
+        </div>
+
+        <div class="hero-actions">
+          <button
+            class="btn btn-primary"
+            onclick="document.getElementById('how').scrollIntoView({behavior: 'smooth'})"
+          >
+            See how it works →
+          </button>
+          <button
+            class="btn btn-ghost"
+            onclick="document.getElementById('find').scrollIntoView({behavior: 'smooth'})"
+          >
+            Where to find us
+          </button>
+        </div>
+
+        <p class="hero-footnote">
+          Made for snackers, parents, athletes, and anyone who wants dessert that loves them back — without worry.
+        </p>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-card">
+          <div class="hero-yogurt-bowl">
+            <div class="bowl-main">
+              <div class="crumb-badge">
+                <span class="crumb-dot"></span>
+                Candy Crumbles
+              </div>
+              <div class="crumbs-trail"></div>
+              <div class="bowl-top"></div>
+            </div>
+            <div class="hero-nutrition-card">
+              <div class="hero-nutrition-header">
+                <span class="hero-nutrition-title">Per Topping Serving*</span>
+                <span class="hero-nutrition-tag">Allergen-Free</span>
+              </div>
+              <div class="hero-macros">
+                <div class="macro-chip">
+                  <span class="macro-label">Protein</span>
+                  <span class="macro-value">8g <span>+</span></span>
+                </div>
+                <div class="macro-chip">
+                  <span class="macro-label">Top Allergens</span>
+                  <span class="macro-value">0 <span>included</span></span>
+                </div>
+                <div class="macro-chip">
+                  <span class="macro-label">Indulgence</span>
+                  <span class="macro-value">100% <span>vibes</span></span>
+                </div>
+              </div>
+              <div class="hero-flavors-row">
+                <span><span class="dot"></span>Cookie Crunch</span>
+                <span><span class="dot"></span>Birthday Burst</span>
+                <span><span class="dot"></span>Berry Blast</span>
+              </div>
+            </div>
+          </div>
+          <p style="margin-top: 0.6rem; font-size: 0.72rem; color: rgba(148,163,184,0.95);">
+            *Sample nutrition values for concept purposes. Final facts will vary by flavor.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section id="benefits" class="section" aria-labelledby="benefits-heading">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">WHY CRAVESAFE</p>
+          <h2 id="benefits-heading" class="section-title">
+            All the fun of candy, none of the worry.
+          </h2>
+        </div>
+        <p class="section-subtitle">
+          CraveSafe is designed for people who usually have to read every label twice. We focus on flavor, fuel, and
+          safety — in that order.
+        </p>
+      </div>
+
+      <div class="benefits-grid">
+        <article class="benefit-card">
+          <p class="benefit-label">INCLUSIVE CANDY</p>
+          <h3 class="benefit-title">Allergen-free by design</h3>
+          <p class="benefit-body">
+            Our crumbles are formulated to be free from the major allergens, so more people can join in dessert time
+            without feeling left out or stressed about cross-contact.
+          </p>
+          <span class="benefit-tag">For families, schools & teams</span>
+        </article>
+
+        <article class="benefit-card">
+          <p class="benefit-label">BETTER-FOR-YOU</p>
+          <h3 class="benefit-title">Protein-packed sweet crunch</h3>
+          <p class="benefit-body">
+            Protein-boosted candy-style pieces add texture and sweetness while supporting active lifestyles —
+            absolutely clutch for athletes, students, and on-the-go snackers.
+          </p>
+          <span class="benefit-tag">Dessert meets performance</span>
+        </article>
+
+        <article class="benefit-card">
+          <p class="benefit-label">EFFORTLESS TOPPING</p>
+          <h3 class="benefit-title">Instant upgrade to any bowl</h3>
+          <p class="benefit-body">
+            Sprinkle CraveSafe over yogurt, oatmeal, fruit bowls, smoothies, or ice cream for a fast upgrade that feels
+            like a treat but fits a better-for-you routine.
+          </p>
+          <span class="benefit-tag">No prep, just pour</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- How to Enjoy -->
+    <section id="how" class="section" aria-labelledby="how-heading">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">HOW TO ENJOY</p>
+          <h2 id="how-heading" class="section-title">
+            Sprinkle, crunch, and go — three easy steps.
+          </h2>
+        </div>
+        <p class="section-subtitle">
+          CraveSafe fits into real routines: busy mornings, after-school snacks, late-night sweet tooth moments, and
+          everything in between.
+        </p>
+      </div>
+
+      <div class="how-grid">
+        <div class="how-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div>
+              <p class="step-title">Start with your base.</p>
+              <p class="step-body">
+                Grab yogurt, oatmeal, ice cream, cottage cheese, smoothies or even pancakes. If it needs flavor and
+                crunch, it’s a CraveSafe canvas.
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <div>
+              <p class="step-title">Add a handful of crumbles.</p>
+              <p class="step-body">
+                Sprinkle Candy Crumbles over the top for instant color, crunch, and sweetness — without bringing common
+                allergens to the party.
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <div>
+              <p class="step-title">Indulge freely, share confidently.</p>
+              <p class="step-body">
+                Enjoy your upgraded treat, knowing CraveSafe was designed for inclusive snacking — so friends, teammates
+                and classmates can dig in too.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="how-card">
+          <div class="how-row">
+            <span class="how-chip">Perfect for</span>
+            <span style="font-size: 0.78rem; color: rgba(203,213,225,0.96);">
+              Mornings • After-school • Game days
+            </span>
+          </div>
+          <div class="how-list">
+            <span>✔ Parents who need one snack everyone can enjoy.</span>
+            <span>✔ Athletes looking to level-up snacks with protein.</span>
+            <span>✔ Students with allergies who still love candy.</span>
+          </div>
+          <p style="color: rgba(148,163,184,0.98);">
+            CraveSafe is produced by a partner manufacturer and brought to you through pop-ups and retail partners,
+            making it easy to try in real life before stocking up.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Find Us / Stay Updated -->
+    <section id="find" class="section" aria-labelledby="find-heading">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">FIND CRAVESAFE</p>
+          <h2 id="find-heading" class="section-title">
+            Pop-ups, carts, and select retailers.
+          </h2>
+        </div>
+        <p class="section-subtitle">
+          We’re starting with in-person experiences so you can taste, ask questions, and find your favorite flavors
+          before we scale.
+        </p>
+      </div>
+
+      <div class="find-grid">
+        <div>
+          <p style="font-size: 0.9rem; color: rgba(203,213,225,0.98);">
+            CraveSafe Candy Crumbles will appear at local pop-up carts, events, and partner locations as we launch.
+            Look for the heart-shield mark — it signals allergen-inclusive candy crunch you can trust.
+          </p>
+
+          <div class="find-badges">
+            <span class="find-badge">Campus & community pop-ups</span>
+            <span class="find-badge">Gyms & training centers</span>
+            <span class="find-badge">Cafés & yogurt shops</span>
+          </div>
+        </div>
+
+        <div id="stay-updated" class="email-card">
+          <div>
+            <p style="font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(148,163,184,0.98);">
+              STAY UPDATED
+            </p>
+            <p style="font-weight: 600; font-size: 1.02rem; margin-top: 0.2rem;">
+              Be first to know where we pop up.
+            </p>
+          </div>
+          <p>
+            Drop your email and we’ll send launch dates, flavor drops, and locations — no spam, just sweet updates.
+          </p>
+          <form onsubmit="event.preventDefault(); alert('Thanks for your interest in CraveSafe!');">
+            <div class="email-row">
+              <input
+                type="email"
+                required
+                class="email-input"
+                placeholder="you@example.com"
+                aria-label="Email address"
+              />
+              <button class="btn btn-primary" type="submit">
+                Get launch updates
+              </button>
+            </div>
+          </form>
+          <p style="font-size: 0.75rem; color: rgba(148,163,184,0.98);">
+            We respect dietary needs and inbox boundaries. You can unsubscribe anytime.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span>© <span id="year"></span> CraveSafe Candy Crumbles. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="#benefits">Product</a>
+        <a href="#find">Locations</a>
+        <a href="#stay-updated">Contact</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.querySelector(".nav-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (navToggle && navLinks) {
+      navToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("is-open");
+      });
+
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("is-open");
+        });
+      });
+    }
+
+    // Year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
